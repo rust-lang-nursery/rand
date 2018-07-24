@@ -84,6 +84,12 @@ distr_int!(distr_uniform_i128, i128, Uniform::new(-123_456_789_123i128, 123_456_
 
 distr_float!(distr_uniform_f32, f32, Uniform::new(2.26f32, 2.319));
 distr_float!(distr_uniform_f64, f64, Uniform::new(2.26f64, 2.319));
+distr_float!(distr_highprecision1_f32, f32, HighPrecision::new(2.26f32, 2.319));
+distr_float!(distr_highprecision2_f32, f32, HighPrecision::new(-1.0f32 / 3.0, 2.319));
+distr_float!(distr_highprecision3_f32, f32, HighPrecision::new(0.001f32, 123_456_789_012_345.987));
+distr_float!(distr_highprecision1_f64, f64, HighPrecision::new(2.26f64, 2.319));
+distr_float!(distr_highprecision2_f64, f64, HighPrecision::new(-1.0f64 / 3.0, 2.319));
+distr_float!(distr_highprecision3_f64, f64, HighPrecision::new(0.001f64, 123_456_789_012_345.987));
 
 // standard
 distr_int!(distr_standard_i8, i8, Standard);
@@ -103,6 +109,8 @@ distr_float!(distr_open01_f32, f32, Open01);
 distr_float!(distr_open01_f64, f64, Open01);
 distr_float!(distr_openclosed01_f32, f32, OpenClosed01);
 distr_float!(distr_openclosed01_f64, f64, OpenClosed01);
+distr_float!(distr_high_precision_f32, f32, HighPrecision01);
+distr_float!(distr_high_precision_f64, f64, HighPrecision01);
 
 // distributions
 distr_float!(distr_exp, f64, Exp::new(1.23 * 4.56));
