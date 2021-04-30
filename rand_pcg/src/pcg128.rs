@@ -128,6 +128,11 @@ impl SeedableRng for Lcg128Xsl64 {
 
 impl RngCore for Lcg128Xsl64 {
     #[inline]
+    fn next_bool(&mut self) -> bool {
+        (self.next_u64() & 1) == 1
+    }
+
+    #[inline]
     fn next_u32(&mut self) -> u32 {
         self.next_u64() as u32
     }
@@ -238,6 +243,11 @@ impl SeedableRng for Mcg128Xsl64 {
 }
 
 impl RngCore for Mcg128Xsl64 {
+    #[inline]
+    fn next_bool(&mut self) -> bool {
+        (self.next_u64() & 1) == 1
+    }
+
     #[inline]
     fn next_u32(&mut self) -> u32 {
         self.next_u64() as u32
